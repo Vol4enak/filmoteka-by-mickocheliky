@@ -1,5 +1,5 @@
 import PopularMovieFromServer from './fetch_api';
-// import genresInfo from './genres_Info';
+// import Info from './infoAboutGenres';
 
 const genresInfo = [
   { id: 28, name: 'Action' },
@@ -25,37 +25,60 @@ const genresInfo = [
 
 const mainListRef = document.querySelector('.film-list')
 
+
 const popularMovieFromServer = new PopularMovieFromServer;
 
 addPopularMovieToPage();
 
-async function addPopularMovieToPage() {
-  // popularMovieFromServer.page = 2;
+// Функция ожидает номер страницы, делает запрос на сервер и рендерит разметку
+async function addPopularMovieToPage(newPage = 1) {
+  popularMovieFromServer.page = newPage;
   const popularMovie = await popularMovieFromServer.getPopularMovieFromServer().then(data => {
     return data;
   });
+  mainListRef.innerHTML = '';
 
   addMurkupOnPage(popularMovie.results)
-
 }
-
+// Функция ожидает массив объектов и рендерит разметку карточек фильмов на страницу
 function addMurkupOnPage(array) {
   const murkupFromArray = array.map(({id, poster_path, title, genre_ids, release_date}) => {
     const imageUrl = `src="https://www.themoviedb.org/t/p/w500/${poster_path}"`;
     const genre = getGenreArrayForOnCard(genre_ids);
-    // console.log(poster_path)
-    return `<li class="film-item" id="${id}">
+    if (genre.length === 1) {
+      return `<li class="film-item" id="${id}">
     <img width="280" class="film-img" ${imageUrl}" alt="${title}" />
     <p class="film-name">
       ${title} <br />
       <span class="film-tag">${genre[0]} | ${release_date.slice(0, 4)}</span>
     </p>
   </li>`
+    }
+    if (genre.length > 1 && genre.length < 3) {
+      return `<li class="film-item" id="${id}">
+    <img width="280" class="film-img" ${imageUrl}" alt="${title}" />
+    <p class="film-name">
+      ${title} <br />
+      <span class="film-tag">${genre[0]}, ${genre[1]} | ${release_date.slice(0, 4)}</span>
+    </p>
+  </li>`
+    }
+    if (genre.length > 2) {
+      return `<li class="film-item" id="${id}">
+    <img width="280" class="film-img" ${imageUrl}" alt="${title}" />
+    <p class="film-name">
+      ${title} <br />
+      <span class="film-tag">${genre[0]}, ${genre[1]}, Other | ${release_date.slice(0, 4)}</span>
+    </p>
+  </li>`
+    }
+    // console.log(poster_path)
+    
   }).join('');
   mainListRef.insertAdjacentHTML('beforeend', murkupFromArray)
 }
 
-
+// Функция ожидает массив id в виде чисел и возвращает массив жанров для конкретного фильма
 function getGenreArrayForOnCard(genresIds) {
   const genresArrayForOnCard = [];
   
