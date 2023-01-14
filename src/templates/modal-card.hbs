@@ -1,4 +1,59 @@
-<div class='modal-card__flex-btn-wrap'>
+{{!-- <div class='modal-card__flex-btn-wrap'>
+      <button class='modal-card__watched-btn' data-id="{{id}}">Add to watched</button>
+      <button class='modal-card__queue-btn' data-id="{{id}}">Add to queue</button>
+    </div> --}}
+    <div class='modal-card'>
+  <div class='modal-card__thumb-left'>
+    <img
+      class='modal-card__img'
+      src='https://image.tmdb.org/t/p/w500{{poster_path}}'
+      alt='{{original_title}}'
+      data-id='{{id}}'
+      width='100%'
+      onerror='this.onerror=null;this.srcset="{{fallbackImageDesktop}}";'
+    />
+  </div>
+
+  <div class='modal-card__thumb-right thumb-right'>
+    <h2 class='thumb-right__title'>{{original_title}}</h2>
+    <div class='thumb-right__row'>
+      <div class='thumb-right__text'>Vote / Votes</div>
+      <div class='thumb-right__details'><span
+          class='thumb-right__details--vote-accent'
+        >{{numberFixed vote_average}}</span>
+        /
+        <span
+          class='thumb-right__details--votes-accent'
+        >{{vote_count}}</span></div>
+    </div>
+    <div class='thumb-right__row'>
+      <div class='thumb-right__text'>Popularity</div>
+      <div class='thumb-right__details'>{{numberFixed popularity}}</div>
+    </div>
+    <div class='thumb-right__row'>
+      <div class='thumb-right__text'>Original Title</div>
+      <div
+        class='thumb-right__details thumb-right__text--accent'
+      >{{original_title}}</div>
+    </div>
+    <div class='thumb-right__row'>
+      <div class='thumb-right__text'>Genre</div>
+      <div class='thumb-right__details'>
+        {{#each genres}} {{name}}{{#unless @last}},{{/unless}} {{/each}}
+      </div>
+    </div>
+    <h3 class='thumb-right__about'>About</h3>
+    <p class='thumb-right__overview'>
+      {{overview}}
+    </p>
+    <div class='modal-card__flex-btn-wrap'>
       <button class='modal-card__watched-btn' data-id="{{id}}">Add to watched</button>
       <button class='modal-card__queue-btn' data-id="{{id}}">Add to queue</button>
     </div>
+    <button class='modal-card__close-btn' data-modal-close>
+      <svg class='card-btn-close' width='30px' height='30px'>
+        <use href='{{closeSvg}}#card-btn-close'></use>
+      </svg>
+    </button>
+  </div>
+</div>
