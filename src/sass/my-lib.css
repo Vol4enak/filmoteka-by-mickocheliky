@@ -1,0 +1,151 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+.container {
+  margin: 0 auto;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  min-width: 320px;
+}
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0px 32px;
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container {
+    padding: 0px 32px;
+    width: 1280px;
+  }
+}
+
+body {
+  color: var(--main-color-text);
+  font-family: "Roboto", sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+input {
+  outline: none;
+}
+
+textarea {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  display: block;
+}
+
+address {
+  font-style: normal;
+}
+
+.film-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.film-card-section {
+  padding-bottom: 40px;
+  padding-top: 20px;
+}
+
+.film-img {
+  width: 280px;
+  height: 402px;
+}
+
+.film-name {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 116%;
+}
+
+.film-tag {
+  line-height: 133%;
+  color: #ff6b08;
+}
+
+/* mobile */
+/* @media screen and (min-width: 480px) {
+	.container {
+	  width: 480px;
+	}
+ } */
+/* tablet */
+@media screen and (min-width: 768px) {
+  .film-img {
+    width: 336px;
+    height: 455px;
+  }
+  .film-list {
+    gap: 32px;
+    justify-content: flex-start;
+  }
+  .film-name {
+    line-height: 133%;
+  }
+  .film-card-section {
+    padding-bottom: 60px;
+    padding-top: 60px;
+  }
+}
+/* desctop */
+@media screen and (min-width: 1280px) {
+  .film-img {
+    width: 394px;
+    height: 574px;
+  }
+  .film-list {
+    row-gap: 32px;
+    -moz-column-gap: 16px;
+         column-gap: 16px;
+  }
+  .film-name {
+    font-size: 20px;
+    line-height: 120%;
+  }
+  .film-tag {
+    line-height: 120%;
+  }
+}/*# sourceMappingURL=my-lib.css.map */
