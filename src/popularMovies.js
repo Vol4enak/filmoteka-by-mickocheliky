@@ -1,5 +1,7 @@
 import PopularMovieFromServer from './fetch_api';
-// import Info from './infoAboutGenres';
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
+
 
 const genresInfo = [
   { id: 28, name: 'Action' },
@@ -29,6 +31,7 @@ const mainListRef = document.querySelector('.film-list')
 const popularMovieFromServer = new PopularMovieFromServer;
 
 addPopularMovieToPage();
+// paginationOnPage();
 
 // Функция ожидает номер страницы, делает запрос на сервер и рендерит разметку
 async function addPopularMovieToPage(newPage = 1) {
@@ -92,3 +95,39 @@ function getGenreArrayForOnCard(genresIds) {
   
   return genresArrayForOnCard;
 }
+
+const options = {
+  totalItems: 500,
+  itemsPerPage: 20,
+  visiblePages: 5,
+  page: 1,
+  centerAlign: true,
+  firstItemClassName: 'tui-first-child',
+  lastItemClassName: 'tui-last-child',
+  template: {
+    page: '<a href="#" class="tui-page-btn">{{page}}</a>',
+    currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
+    moveButton:
+      '<a href="#" class="tui-page-btn tui-{{type}}">' +
+        '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '</a>',
+    disabledMoveButton:
+      '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
+        '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '</span>',
+    moreButton:
+      '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
+        '<span class="tui-ico-ellip">...</span>' +
+      '</a>'
+  }
+};
+
+const pagination = new Pagination('pagination', options);
+
+// async function paginationOnPage() {
+//   const totalPages = await popularMovieFromServer.getPopularMovieFromServer().then(data => {
+//     // console.log(data.total_pages);
+//     return data.total_pages;
+//   }); 
+  
+// }
