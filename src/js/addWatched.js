@@ -7,8 +7,8 @@ import {
   BUTTON_LABEL_WATCHED_REMOVE,
   BUTTON_LABEL_WATCHED_ADD,
 } from './constants/app_const';
-// import { refs } from './constants/refs';
-// import { onFilmCardClick } from './onFilmCardClick';
+import { refs } from './constants/refs';
+import { onFilmCardClick } from './onFilmCardClick';
 import { localStorageAPI } from './localStorageAPI';
 
 const { headerWatchedBtn, mainList } = refs;

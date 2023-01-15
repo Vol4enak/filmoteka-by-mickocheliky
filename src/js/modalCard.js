@@ -1,6 +1,7 @@
+// import './popularMovies';
 import modalInputTpl from './templates/modal-card.hbs';
-// import { dynRefs } from './constants/dynamicRefs';
-// import { refs } from './constants/refs';
+import { dynRefs } from './constants/dynamicRefs';
+import { refs } from './constants/refs';
 import { addWatched } from './addWatched';
 import { addQueue } from './addQueue';
 import {
@@ -8,7 +9,7 @@ import {
   DB_STORAGE,
   BUTTON_LABEL_WATCHED_REMOVE,
   BUTTON_LABEL_QUEUE_REMOVE,
-    } from './constants/app_const';
+} from './constants/app_const';
 import { localStorageAPI } from './localStorageAPI';
 
 const modal = refs.modal;
