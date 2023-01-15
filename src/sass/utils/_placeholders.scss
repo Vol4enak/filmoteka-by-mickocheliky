@@ -1,0 +1,27 @@
+%visibility {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  position: absolute;
+}
+%container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  min-width: 320px;
+
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 0px 32px;
+    width: 768px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 0px 32px;
+    width: 1280px;
+  }
+}
