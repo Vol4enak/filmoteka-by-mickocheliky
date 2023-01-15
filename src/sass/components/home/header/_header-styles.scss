@@ -5,15 +5,11 @@
 // }
 
 .home_header-container {
-    width: 100%;
-    // margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 40px;
+
+     padding-top: 40px;
     padding-bottom: 40px;
-    // outline: 2px solid green;
-    margin-left: auto;
-    margin-right: auto;
+   
+   
 
     @media screen and (min-width: 320px) {
         width: 320px;
@@ -36,40 +32,41 @@
 //     list-style-type: none;
 // }
 .home_header {
+    width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-color: grey;
-    background-image: url(../images/home-png/home-header/home-phone-1x-min.jpg);
+    background-image: url(../images/home-png/home-mob@1x.png);
 
     @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
         background-image:
-            url(../images/home-png/home-header/home-phone-2x-min.jpg)
+            url(../images/home-png/home-mob@2x.png)
     }
 
     @media screen and (min-width: 768px) {
         background-image:
-            url(../images/home-png/home-header/home-table-1x-min.jpg);
+            url(../images/home-png/home-tab@1x.png);
 
         @media (min-device-pixel-ratio: 2),
         (min-resolution: 192dpi),
         (min-resolution: 2dppx) {
             background-image:
-                url(../images/home-png/home-header/home-table-2x-min.jpg)
+                url(../images/home-png/home-tab@2x.png)
         }
     }
 
     @media screen and (min-width: 1280px) {
         background-image:
-            url(../images/home-png/home-header/home-текстура-1x-min.jpg);
+            url(../images/home-png/home-dec@1x.png);
 
         @media (min-device-pixel-ratio: 2),
         (min-resolution: 192dpi),
         (min-resolution: 2dppx) {
             background-image:
-                url(../images/home-png/home-header/home-текстура-2x-min.jpg)
+                url(../images/home-png/home-dec@2x.png)
         }
     }
 
