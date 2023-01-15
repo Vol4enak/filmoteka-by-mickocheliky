@@ -51,7 +51,7 @@ function addMurkupOnPage(array) {
       }
       if (genre.length > 1 && genre.length < 3) {
         return `<li class="film-item" id="${id}">
-    <img width="280" class="film-img" ${imageUrl}" alt="${title}" />
+		  <img width="280" class="film-img" ${imageUrl}" alt="${title}" />
     <p class="film-name">
       ${title} <br />
       <span class="film-tag">${genre[0]}, ${genre[1]} | ${release_date.slice(
