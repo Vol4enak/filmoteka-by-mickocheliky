@@ -1,0 +1,39 @@
+<header class="home_header">
+  <div class="home_header-container container">
+    <nav class="home_header-navigation">
+      <a href="./home-page" class="home_header-logo">
+        <svg width="24" height="24" aria-label="логотип головний">
+          <use href="./images/symbol-defs.svg#icon-film"></use>
+        </svg>
+      </a>
+      <a href="./home-page" class="home_header-logo-text">Filmoteka</a>
+
+      <ul class="home_header-nav">
+        <li>
+          <a href="./home-page" class="home_header-link home_current">Home</a>
+        </li>
+        <li>
+          <a href="./my-lib" class="home_header-link home_header-link-position"
+            >my library</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <form action="search" class="home_header-form">
+      <input
+        type="text"
+        placeholder="Movie search"
+        class="home_header-input"
+        name="query"
+      />
+      <button type="submit" class="home_header-btn">
+        <svg width="12" height="12" aria-label="пошук головний">
+          <use href="./images/symbol-defs.svg#icon-search"></use>
+        </svg>
+      </button>
+    </form>
+    <p class="home_header-attention">
+      Search result not successful. Enter the correct movie name and
+    </p>
+  </div>
+</header>
