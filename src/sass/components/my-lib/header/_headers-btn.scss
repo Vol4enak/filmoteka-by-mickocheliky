@@ -1,0 +1,28 @@
+.button {
+  display: block;
+  min-width: 130px;
+  min-height: 44px;
+
+  background: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1, 33;
+
+  align-items: center;
+
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
+.button-bar__btn--active {
+  background: transparent;
+  background: #ff6b01;
+  border: 0px;
+  box-shadow: (0px 8px 43px rgba(255, 107, 1, 0.6));
+}
