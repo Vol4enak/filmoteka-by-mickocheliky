@@ -46,23 +46,23 @@ const genresInfoUk = [
 ];
 
 const mainListRef = document.querySelector('.film-list');
-const formRef = document.querySelector('#search-form');
 
-
-const movieFromServer = new MovieFromServer;
+const popularMovieFromServer = new PopularMovieFromServer();
 
 addPopularMovieToPage();
 
 
 // Функция ожидает номер страницы, делает запрос на сервер и рендерит разметку
 async function addPopularMovieToPage(newPage = 1) {
-  movieFromServer.page = newPage;
-  const popularMovie = await movieFromServer.getPopularMovieFromServer().then(data => {
-    return data;
-  });
+  popularMovieFromServer.page = newPage;
+  const popularMovie = await popularMovieFromServer
+    .getPopularMovieFromServer()
+    .then(data => {
+      return data;
+    });
   mainListRef.innerHTML = '';
 
-  addMurkupOnPage(popularMovie.results)
+  addMurkupOnPage(popularMovie.results);
 }
 
 // Функция ожидает массив объектов и рендерит разметку карточек фильмов на страницу
@@ -95,14 +95,14 @@ function addMurkupOnPage(array) {
 // Функция ожидает массив id в виде чисел и возвращает массив жанров для конкретного фильма
 function getGenreArrayForOneCard(genresIds) {
   const genresArrayForOnCard = [];
-  
+
   for (const genresId of genresIds) {
     genresInfoUk.map(genre => {
       if (genresId === genre.id) {
         genresArrayForOnCard.push(genre.name);
       }
-    })
+    });
   }
-  
+
   return genresArrayForOnCard;
 }
