@@ -1,6 +1,4 @@
 import modalTemplate from '../../templates/modal-film-detail.hbs';
-import prodCompany from '../../templates/production-company.hbs';
-
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import { errorModal } from '../js/notify';

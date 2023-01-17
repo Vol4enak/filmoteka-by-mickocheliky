@@ -18,15 +18,10 @@
     "url": "https://github.com/Vol4enak/filmoteka-by-mickocheliky/issues"
   },
   "dependencies": {
-<<<<<<< HEAD
     "axios": "^1.2.2",
     "modern-normalize": "^1.1.0",
     "notiflix": "^3.2.6",
     "nprogress": "^0.2.0"
-=======
-    "modern-normalize": "^1.1.0",
-    "notiflix": "^3.2.6"
->>>>>>> main
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",

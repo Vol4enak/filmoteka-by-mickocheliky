@@ -1,6 +1,5 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 .container {
-  margin: 0 auto;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -74,6 +73,147 @@ button {
 
 address {
   font-style: normal;
+}
+
+.header-body {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.56);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/lib-images/header/header-bg-x1/header-bg-320-x1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 320px;
+  min-height: 230px;
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .header-body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/lib-images/header/header-bg-x2/header-bg-320-x2.jpg");
+  }
+}
+@media screen and (min-width: 320px) {
+  .header-body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/lib-images/header/header-bg-x1/header-bg-768-x1.jpg");
+    max-width: 768px;
+  }
+}
+@media screen and (min-width: 320px) and (min-device-pixel-ratio: 2), screen and (min-width: 320px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 320px) and (min-resolution: 192dpi), screen and (min-width: 320px) and (min-resolution: 2dppx) {
+  .header-body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/lib-images/header/header-bg-x1/header-bg-768-x1.jpg");
+  }
+}
+@media screen and (min-width: 768px) {
+  .header-body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/lib-images/header/header-bg-x1/header-bg-1280-x1.jpg");
+    max-width: 1280px;
+  }
+}
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .header-body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/lib-images/header/header-bg-x2/header-bg-1280-x2.jpg");
+  }
+}
+
+.header-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo::before {
+  display: inline-block;
+  text-align: center;
+  margin-right: 10px;
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/lib-images/header/Logo_film.svg");
+}
+
+.logo__text {
+  display: none;
+  font-size: Roboto;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  color: #ffffff;
+}
+@media screen and (min-width: 768px) {
+  .logo__text {
+    display: block;
+  }
+}
+
+.header-nav__list {
+  display: flex;
+}
+
+.header-nav__item:not(:last-child) {
+  margin-right: 40px;
+}
+
+.header-nav__link {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.header-nav__link::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #ff001b;
+  transform: scaleX(0);
+}
+.header-nav__link:hover::after {
+  transform: scaleX(1);
+}
+
+.button-bar {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.button-bar__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.button {
+  display: block;
+  min-width: 130px;
+  min-height: 44px;
+  background: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1, 33;
+  align-items: center;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.button-bar__btn--active {
+  background: transparent;
+  background: #ff6b01;
+  border: 0px;
+  box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
 }
 
 .film-list {

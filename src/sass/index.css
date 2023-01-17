@@ -1,6 +1,5 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 .container {
-  margin: 0 auto;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -74,6 +73,193 @@ button {
 
 address {
   font-style: normal;
+}
+
+.home_header-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+  .home_header-container {
+    width: 768px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 45px;
+  }
+}
+
+.home_header {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: grey;
+  background-image: url(../images/home-png/home-mob@1x.png);
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .home_header {
+    background-image: url(../images/home-png/home-mob@2x.png);
+  }
+}
+@media screen and (min-width: 768px) {
+  .home_header {
+    background-image: url(../images/home-png/home-tab@1x.png);
+  }
+}
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .home_header {
+    background-image: url(../images/home-png/home-tab@2x.png);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .home_header {
+    background-image: url(../images/home-png/home-dec@1x.png);
+  }
+}
+@media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (min-resolution: 192dpi), screen and (min-width: 1280px) and (min-resolution: 2dppx) {
+  .home_header {
+    background-image: url(../images/home-png/home-dec@2x.png);
+  }
+}
+
+.home_header-logo-text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.17;
+  text-decoration: none;
+  color: #FFFFFF;
+  margin-left: 10px;
+}
+@media screen and (max-width: 768px) {
+  .home_header-logo-text {
+    visibility: hidden;
+    display: none;
+  }
+}
+
+.home_header-logo {
+  text-decoration: none;
+  display: flex;
+  align-self: center;
+}
+
+.home_header-link {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.home_header-navigation {
+  display: flex;
+}
+
+.home_header-nav {
+  display: flex;
+  margin-right: 0px;
+  margin-left: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.home_header-link-position {
+  margin-left: 40px;
+}
+
+.home_header-form {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home_header-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 280px;
+  height: 20px;
+  font-family: "Roboto";
+  color: #FFFFFF;
+  border-bottom: 0.5px solid #FFFFFF;
+}
+@media screen and (min-width: 768px) {
+  .home_header-input {
+    width: 340px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .home_header-input {
+    width: 395px;
+  }
+}
+
+input::-moz-placeholder {
+  color: #FFFFFF;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.42;
+}
+
+input:-ms-input-placeholder {
+  color: #FFFFFF;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.42;
+}
+
+input::placeholder {
+  color: #FFFFFF;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.42;
+}
+
+.home_header-btn {
+  height: 20px;
+  width: 20px;
+  border: none;
+  outline: none;
+  border-bottom: 0.5px solid #FFFFFF;
+  background: transparent;
+  cursor: pointer;
+}
+
+.home_current {
+  border-bottom: 3px solid #FF001B;
+}
+
+.home_header-attention {
+  visibility: hidden;
+  margin: 0;
+  margin-top: 15px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  margin-left: auto;
+  margin-right: auto;
+  color: #FF001B;
+}
+@media screen and (min-width: 768px) {
+  .home_header-attention {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .film-list {
