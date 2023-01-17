@@ -54,7 +54,7 @@ addPopularMovieToPage();
 
 // Функция ожидает номер страницы, делает запрос на сервер и рендерит разметку
 export async function addPopularMovieToPage(newPage = currentPage) {
-console.log(newPage);
+
   popularMovieFromServer.page = newPage;
   const popularMovie = await popularMovieFromServer
     .getPopularMovieFromServer()
@@ -62,7 +62,7 @@ console.log(newPage);
       return data;
     });
   mainListRef.innerHTML = '';
-  console.log(newPage);
+
   addMurkupOnPage(popularMovie.results);
 }
 
