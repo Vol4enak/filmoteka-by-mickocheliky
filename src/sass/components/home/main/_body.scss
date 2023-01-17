@@ -75,7 +75,7 @@
 @media screen and (min-width: 1280px) {
   .film-img {
     width: auto;
-    height: 504px;  
+    height: 504px;
   }
   .film-list {
     row-gap: 32px;
@@ -146,16 +146,14 @@
   height: 40px;
   border-radius: 5px;
   background-color: #f7f7f7;
-  transform: matrix(-1, 0, 0, 1, 0, 0);
   stroke: #000;
-  background-position: center;
-  background-repeat: no-repeat;
+  fill: transparent;
 }
 
-.arrow-left {
-  background-image: url(/src/images/arrow-left.svg);
+.icon-arrow-left {
+  // background-image: url(../images/symbol-defs.svg#icon-arrow-right);
 }
 
-.arrow-right {
-  background-image: url(/src/images/arrow-right.svg);
+.icon-arrow-right {
+  // background-image: url(/src/images/arrow-right.svg);
 }
