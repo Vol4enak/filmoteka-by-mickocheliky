@@ -1,5 +1,5 @@
 import PopularMovieFromServer from './fetch_api';
-
+import {currentPage} from "./js/body-logic/pagination"
 
 const genresInfo = [
   { id: 28, name: 'Action' },
@@ -53,7 +53,8 @@ addPopularMovieToPage();
 
 
 // Функция ожидает номер страницы, делает запрос на сервер и рендерит разметку
-export default async function addPopularMovieToPage(newPage = 1) {
+export async function addPopularMovieToPage(newPage = currentPage) {
+console.log(newPage);
   popularMovieFromServer.page = newPage;
   const popularMovie = await popularMovieFromServer
     .getPopularMovieFromServer()
@@ -61,7 +62,7 @@ export default async function addPopularMovieToPage(newPage = 1) {
       return data;
     });
   mainListRef.innerHTML = '';
-
+  console.log(newPage);
   addMurkupOnPage(popularMovie.results);
 }
 
