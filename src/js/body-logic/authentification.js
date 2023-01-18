@@ -1,12 +1,34 @@
 import Notiflix from "notiflix"
 
-const emailEl = document.querySelector(".email")
-const passwordEL = document.querySelector(".password")
-const signupbtnEl = document.querySelector(".signupbtn")
-const loginbtnEl = document.querySelector(".loginbtn")
-const logoutbtnEl = document.querySelector(".logoutbtn")
-const cancelbtnEL = document.querySelector(".cancelbtn")
-const mainSignbtn = document.querySelector(".mainSignbtn")
+const signInHeaderEl = document.querySelector(".header-sign-in")
+const popupEl = document.querySelector(".sign-popup")
+const cancelBtnEl = document.querySelector(".login-cancel-button")
+
+
+
+signInHeaderEl.addEventListener("click", openModal)
+
+cancelBtnEl.addEventListener("click", closeModal)
+
+function openModal() {
+    popupEl.style.display = "flex"
+    document.body.style.overflow = "hidden"
+    document.body.style.height = "100%"
+}
+
+function closeModal() {
+    popupEl.style.display = "none"
+    document.body.style.overflow = "visible"
+}
+
+
+const emailEl = document.querySelector(".sign-popup-email-input")
+const passwordEL = document.querySelector(".sign-popup-psw-input")
+const signupbtnEl = document.querySelector(".modal-signup-button")
+const loginbtnEl = document.querySelector(".modal-log-in-button")
+const cancelbtnEL = document.querySelector(".login-cancel-button")
+const logoutbtnEl = document.querySelector(".header-sign-out")
+
 
 import { initializeApp } from "firebase/app";
 
@@ -19,7 +41,6 @@ const firebaseConfig = {
     appId: "1:570128539922:web:4bc967e78fce05a40693cb",
     measurementId: "G-P61BZ6KQ5V"
 };
-
 
 import {
     getAuth,
@@ -80,7 +101,6 @@ const loginEmailPassword = async (e) => {
         console.log(userCredential.user)
         monitorAuthState()
         const removeSignbtn = await addVisHidden
-        // Notiflix.Notify.success(`You signed in with ${userCredential.user.email}`, { timeout: 14000, })
     }
     catch (error) {
         showLoginError(error)
@@ -111,7 +131,15 @@ const logout = async () => {
 const monitorAuthState = async () => {
     onAuthStateChanged(auth, user => {
         if (user) {
-            redirrectToMainPage()
+            logoutbtnEl.classList.remove("visually-hidden")
+            signInHeaderEl.classList.add("visually-hidden")
+            Notiflix.Notify.success("You signed in")
+            closeModal()
+        }
+        else {
+            Notiflix.Notify.success("You logged out")
+            logoutbtnEl.classList.add("visually-hidden")
+            signInHeaderEl.classList.remove("visually-hidden")
         }
     })
 }
@@ -121,14 +149,11 @@ function addVisHidden() {
         mainSignbtn.classList.add("visually-hidden")
     }
 }
-function redirrectToMainPage() {
-    window.location.replace("http://localhost:1234/")
-}
 
 loginbtnEl.addEventListener("click", loginEmailPassword)
 
 signupbtnEl.addEventListener("click", createAccount)
 
-cancelbtnEL.addEventListener("click", redirrectToMainPage)
+cancelbtnEL.addEventListener("click", closeModal)
 
 logoutbtnEl.addEventListener("click", logout)
