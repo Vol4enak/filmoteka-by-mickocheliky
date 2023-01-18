@@ -3,8 +3,8 @@ import {
   arrIdCardForQueue,
 } from '../body-logic/modal-win/modal-btn';
 import { getFetchedById } from '../../fetch_api';
-
-const bodyEl = document.querySelector('.film-list');
+// import { renderModalInformation } from '../../../popularMovies';
+const ulEl = document.querySelector('.film-list-home');
 const btnLibWatched = document.querySelector('.header-list--lib__btn-watched');
 const btnLibQueue = document.querySelector('.header-list--lib__btn-queue');
 const clearModal = document.querySelector('.clearing-modal');
@@ -14,17 +14,17 @@ const modal = document.querySelector('.modal');
 
 btnLibWatched.addEventListener('click', LibCardrenderWatch);
 btnLibQueue.addEventListener('click', LibCardrenderQueue);
-bodyEl.addEventListener('click', openModal);
+ulEl.addEventListener('click', openModal);
 
 export function openModal(e) {
   const query = e.target.nodeName;
-  if (query === 'IMG' || query === 'P' || query === 'UL') {
+  if (query === 'IMG' || query === 'P' || query === 'SPAN') {
     modal.addEventListener('click', onBtnClick);
     modalBtn.addEventListener('click', onClose);
   }
 }
 
-
+LibCardrenderWatch();
 let a = 0;
 let b = 0;
 function onBtnClick(e) {
@@ -59,9 +59,9 @@ function onClose() {
   modal.removeEventListener('click', onBtnClick);
 }
 
-async function LibCardrenderWatch() {
+function LibCardrenderWatch() {
   stylesForWatched();
-  bodyEl.innerHTML = '';
+  ulEl.innerHTML = '';
   arrIdCardForWatched.map(id => {
     getFetchedById(id).then(res => {
       let { poster_path, original_title, id, release_date } = res;
@@ -83,28 +83,28 @@ async function LibCardrenderWatch() {
         genres = genres.slice(0, 2) + ', other';
       }
       genres = genres.toString().replaceAll(',', ', ');
-      const render = `<article class="box" ">
-            <img class="movie-preview"src="${imgPreview}${poster_path}" alt="123" width="336" height="455" data-action="${id}" >
+      const render = `<li class="film-item" >
+            <img class="film-img" src="${imgPreview}${poster_path}" alt="123" width="336" height="455" data-action="${id}" >
             <ul class="info-list"data-action="${id}">
               <li>
-              <p class="info-list__title"data-action="${id}">${original_title}</p>
+              <p class="film-name"data-action="${id}">${original_title}</p>
               </li>
               <li>
-            <p class="info-list__genres"data-action="${id}">${genres} | ${release_date.slice(
+            <p class="film-tag" data-action="${id}">${genres} | ${release_date.slice(
         0,
         4
       )}</p></li>
           </ul>
-                      </article>`;
+                      </li>`;
 
-      return bodyEl.insertAdjacentHTML('beforeend', render);
+      return ulEl.insertAdjacentHTML('beforeend', render);
     });
   });
 }
-LibCardrenderWatch();
-async function LibCardrenderQueue() {
+
+function LibCardrenderQueue() {
   stylesForQueue();
-  bodyEl.innerHTML = '';
+  ulEl.innerHTML = '';
   arrIdCardForQueue.map(id => {
     getFetchedById(id).then(res => {
       let { poster_path, original_title, id, release_date } = res;
@@ -140,7 +140,7 @@ async function LibCardrenderQueue() {
           </ul>
                       </article>`;
 
-      return bodyEl.insertAdjacentHTML('beforeend', render);
+      return ulEl.insertAdjacentHTML('beforeend', render);
     });
   });
 }

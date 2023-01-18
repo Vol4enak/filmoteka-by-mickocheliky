@@ -1,5 +1,6 @@
 // import { showWatchedFilms ,showWQueueFilms} from '../../lib-js/render-lib';
-
+// import { getFetchedById } from "../../../fetch_api";
+// import {renderModalInformation} from "../../popularMovies"
 const resFromWatch = getIlocaltemWatchedme();
 const resFromQueue = getlocalItemQueue();
 

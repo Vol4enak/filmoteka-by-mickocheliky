@@ -1,4 +1,4 @@
-import { renderModalInformation } from '../../../popularMovies';
+import { renderModalInformation } from '../render-cards';
 import { getFetchedById } from '../../../fetch_api';
 // import '../../lib-js/render-lib';
 
@@ -8,14 +8,14 @@ import {
   arrIdCardForWatched,
   arrIdCardForQueue,
 } from './modal-btn';
-const ulBox = document.querySelector('.film-list');
+const ulEl = document.querySelector('.film-list-home');
 const modal = document.querySelector('.modal');
 const clearModal = document.querySelector('.clearing-modal');
 const modalBtn = document.querySelector('.btn-close');
 const body = document.querySelector('body');
 const modalWin = document.querySelector('.modal-window');
 
-ulBox.addEventListener('click', openModal);
+ulEl.addEventListener('click', openModal);
 
 export function openModal(e) {
   const query = e.target.nodeName;
@@ -38,7 +38,7 @@ export function onClose() {
   modal.classList.add('visibility');
   body.style.overflow = 'visible';
   modalWin.style.opacity = '0';
-    modal.removeEventListener('click', onBtnClick);
+  modal.removeEventListener('click', onBtnClick);
   localStorage.setItem('data-watched', JSON.stringify(arrIdCardForWatched));
   localStorage.setItem('data-queue', JSON.stringify(arrIdCardForQueue));
 }
