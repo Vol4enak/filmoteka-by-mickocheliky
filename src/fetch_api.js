@@ -38,7 +38,7 @@ export class PopularMovieFromServer {
   }
 }
 export async function getFetchedById(id) {
-  console.log(id);
+  
   id = id.toString()
   const getFetch = await fetch(
     `${FETCH_HTTP}/movie/${id}?api_key=${API_KEYS}&language=en-US`

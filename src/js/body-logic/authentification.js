@@ -56,7 +56,7 @@ const auth = getAuth(app);
 
 
 const showLoginError = (error) => {
-    console.log(error)
+
     if (error.code === "auth/wrong-password") {
         Notiflix.Notify.failure(`Wrong password. Try again.`)
         return
@@ -98,7 +98,7 @@ const loginEmailPassword = async (e) => {
 
     try {
         const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-        console.log(userCredential.user)
+    
         monitorAuthState()
         const removeSignbtn = await addVisHidden
     }
@@ -114,7 +114,7 @@ const createAccount = async (e) => {
 
     try {
         const userCredential = await createUserWithEmailAndPassword(auth, loginEmail, loginPassword)
-        console.log(userCredential.user)
+      
         monitorAuthState()
     }
     catch (error) {
@@ -124,7 +124,7 @@ const createAccount = async (e) => {
 
 const logout = async () => {
     await signOut(auth)
-    // console.log("Signed Out")
+
     // Notiflix.Notify.success("Signed out")
 }
 

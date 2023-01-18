@@ -49,8 +49,6 @@ export const genresInfoUk = [
 ];
 
 const mainListRef = document.querySelector('.film-list');
-console.log(mainListRef);
-console.log(123);
 const paginationBox = document.querySelector('#pagination');
 
 const popularMovieFromServer = new PopularMovieFromServer();

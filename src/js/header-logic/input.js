@@ -32,7 +32,7 @@ async function searchFilm(e) {
 // Пагинация для поиска
 async function paginationForSearchFetch() {
   const totalPages = await popularMovieFromServer.getSubmitMovieFromServer().then(data => {
-    // console.log(data);
+
     return data.total_pages;
   });
   const options = paginationOptions(totalPages);

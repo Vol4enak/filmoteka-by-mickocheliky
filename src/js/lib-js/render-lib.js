@@ -23,8 +23,8 @@ export function openModal(e) {
     modalBtn.addEventListener('click', onClose);
   }
 }
-LibCardrenderWatch();
-console.log(123);
+
+
 let a = 0;
 let b = 0;
 function onBtnClick(e) {
@@ -101,7 +101,7 @@ async function LibCardrenderWatch() {
     });
   });
 }
-
+LibCardrenderWatch();
 async function LibCardrenderQueue() {
   stylesForQueue();
   bodyEl.innerHTML = '';
