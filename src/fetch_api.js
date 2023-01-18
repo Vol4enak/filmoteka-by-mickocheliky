@@ -1,5 +1,5 @@
 const FETCH_HTTP = 'https://api.themoviedb.org/3';
-const API_KEY = 'bcde96d2248e63a51f520e697b2ad108';
+const API_KEYS = 'bcde96d2248e63a51f520e697b2ad108';
 
 export class PopularMovieFromServer {
   constructor() {
@@ -39,7 +39,7 @@ export class PopularMovieFromServer {
 }
 export async function getFetchedById(id) {
   const getFetch = await fetch(
-    `${FETCH_HTTP}/movie/${id.toString()}?api_key=${API_KEY}&language=en-US`
+    `${FETCH_HTTP}/movie/${id.toString()}?api_key=${API_KEYS}&language=en-US`
   );
   const card = await getFetch.json();
 
