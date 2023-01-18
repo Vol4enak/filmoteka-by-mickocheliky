@@ -25,7 +25,7 @@ leftArrowRef.hidden = true;
 firstPageRef.hidden = true;
 export let currentPage = 1;
 function onPaginationClick(event) {
-  console.log(currentPage);
+
   if (event.target.tagName === 'BUTTON') {
     const numOfPage = Number(event.target.textContent);
     if (numOfPage) {
