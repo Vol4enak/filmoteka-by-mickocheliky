@@ -72,7 +72,7 @@ function addMurkupOnPage(array) {
     </p>
   </li>`;
       }
-      // console.log(poster_path)
+    
     })
     .join('');
   mainListRef.insertAdjacentHTML('beforeend', murkupFromArray);
