@@ -1,6 +1,13 @@
 body {
   color: var(--main-color-text);
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  &.dark-theme {
+    background-color: #1e2025;
+  }
 }
 
 ul {
