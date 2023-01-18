@@ -1,7 +1,6 @@
 import { toggleThemeBtn, mainEl } from '../refs';
 const KEY_STORAGE_THEME = 'Theme';
-console.log(toggleThemeBtn);
-console.log(mainEl);
+
 initialTheme();
 
 toggleThemeBtn.addEventListener('click', toggleTheme);
