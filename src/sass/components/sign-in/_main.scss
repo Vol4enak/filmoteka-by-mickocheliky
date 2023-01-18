@@ -1,0 +1,88 @@
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+} 
+@media screen and (min-width: 480px) {
+.sign-form{
+    padding-top: 40px;
+    align-items: center;
+    display: flex;  
+    justify-content: center;
+    padding-bottom: 10;
+}
+}
+@media screen and (min-width: 768px) {
+.sign-form{
+    padding-top: 60px;
+    align-items: center;
+    display: flex;  
+    justify-content: center;
+    padding-bottom: 10;
+}
+}
+@media screen and (min-width: 1200px) {
+.sign-form{
+    padding-top: 100px;
+    align-items: center;
+    display: flex;  
+    justify-content: center;
+    padding-bottom: 10;
+}
+}
+
+.clearfix{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.email-password{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-button{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, serif;
+    font-size: large;
+    padding-top: 15;
+    padding-bottom: 15;
+    background-color: rgb(255, 251, 0);
+    border-radius: 15;
+    cursor: pointer;
+}
+.form-button:hover{
+    background-color: rgb(0, 128, 122);
+}
+
+.form-input{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 7;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
