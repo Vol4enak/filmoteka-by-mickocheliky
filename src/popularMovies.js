@@ -1,5 +1,7 @@
 import PopularMovieFromServer from './fetch_api';
+
 import { currentPage } from './js/body-logic/pagination';
+
 
 const genresInfo = [
   { id: 28, name: 'Action' },
@@ -65,6 +67,7 @@ export async function addPopularMovieToPage(newPage = currentPage) {
 
 // Функция ожидает массив объектов и рендерит разметку карточек фильмов на страницу
 export function addMurkupOnPage(array) {
+
   const url =
     'src="https://media.istockphoto.com/id/984996502/uk/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D1%96-%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F/%D0%BD%D0%B5%D0%B7%D0%B0%D0%B1%D0%B0%D1%80%D0%BE%D0%BC-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B8%D0%B9-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD-%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D1%83.jpg?s=612x612&w=0&k=20&c=fWxMbUFQMxaL5_wB6SjZ9LLGnvpkCYAIdpqgde_ieR4="';
   const murkupFromArray = array
@@ -85,6 +88,7 @@ export function addMurkupOnPage(array) {
     <img width="280" class="film-img" ${
       poster_path ? imageUrl : url
     }" alt="${title}" />
+
     <p class="film-name">
       ${title} <br />
       <span class="film-tag">${nameOfGenre} | ${
