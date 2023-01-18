@@ -1,6 +1,6 @@
 body {
   color: var(--main-color-text);
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 ul {
@@ -64,3 +64,8 @@ address {
   clip: rect(0 0 0 0);
   overflow: hidden;
 } 
+
+.visibility {
+  @extend %visibility;
+}
+
