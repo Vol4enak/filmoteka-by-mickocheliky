@@ -1,6 +1,6 @@
 body {
   color: var(--main-color-text);
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 ul {
@@ -49,4 +49,7 @@ address {
 
 .container {
   @extend %container;
+}
+.visibility {
+  @extend %visibility;
 }

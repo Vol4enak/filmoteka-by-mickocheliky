@@ -1,4 +1,5 @@
 import {PopularMovieFromServer} from '../../fetch_api';
+
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import {addMurkupOnPage, paginationOptions} from '../../popularMovies';
 import Pagination from 'tui-pagination';
@@ -41,8 +42,7 @@ async function paginationForSearchFetch() {
     const currentPage = evt.page;
     addSearchingMovieToPage(popularMovieFromServer.query, currentPage)
   })
-
-
+}
 // Функция ожидает значение из строки поиска и номер страницы и рендерит разметку
 async function addSearchingMovieToPage(value, searchPage) {
   popularMovieFromServer.page = searchPage;
@@ -59,4 +59,3 @@ async function addSearchingMovieToPage(value, searchPage) {
 
   addMurkupOnPage(searchingMovieData.results)
 }
-
