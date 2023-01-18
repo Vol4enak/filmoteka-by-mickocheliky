@@ -5,6 +5,7 @@ const mainEl = document.querySelector('main');
 const tagsMenu = document.querySelector('.menu-tags');
 const tagsList = document.querySelector('.menu-tags__list');
 const sortMenu = document.querySelector('.user-tools__btn--menu');
+const scrollToTop = document.querySelector('.fix-wrapper');
 
 export {
   gallery,
@@ -14,4 +15,5 @@ export {
   tagsMenu,
   tagsList,
   sortMenu,
+  scrollToTop,
 };
