@@ -1,0 +1,184 @@
+.backdrop--autorization {
+  @media screen and (max-width: 767px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.modal-autorization {
+  width: 450px;
+  padding: 70px 35px 40px;
+
+  @media screen and (max-width: 767px) {
+    padding-top: 8px;
+    max-width: 450px;
+    height: 450px;
+  }
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  visibility: visible;
+
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  main.dark-theme & {
+    background-color: #1e2025;
+  }
+
+  .backdrop.is-hidden & {
+    transform: translate(-50%, 200%) scale(0.1);
+    visibility: hidden;
+  }
+}
+
+.log-in__title {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.166;
+  text-align: center;
+  margin-bottom: 30px;
+
+  main.dark-theme & {
+    color: #fff;
+  }
+}
+
+.modal__title--log-in {
+}
+.form {
+}
+.form__label {
+  position: relative;
+}
+
+.form__text {
+  display: block;
+  margin-bottom: 5px;
+
+  main.dark-theme & {
+    color: #fff;
+  }
+}
+
+.form__input {
+  width: 100%;
+  height: 43px;
+  padding-left: 40px;
+  padding-top: 5px;
+  padding-bottom: 2px;
+
+  font-size: 15px;
+  border: 1px solid rgba(128, 128, 128, 0.527);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border-radius: 5px;
+
+  transition: outline-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    outline-color: #ff6b0891;
+  }
+
+  main.dark-theme & {
+    &:hover,
+    &:focus {
+      outline: 2px solid #ff6b08;
+    }
+  }
+}
+
+.form__input::placeholder {
+}
+
+.form__icon {
+  position: absolute;
+  top: 36px;
+  left: 10px;
+  fill: rgba(128, 128, 128);
+
+  transition: fill 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .form__input:focus + & {
+    fill: #ff6b08;
+  }
+}
+.form__btn {
+  width: 200px;
+  height: 50px;
+
+  font-size: 16px;
+  line-height: 2;
+  border-radius: 5px;
+  border: none;
+
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+  }
+}
+.form__btn--sign-in {
+  background-color: #ff6b08;
+  display: block;
+  margin: 0 auto;
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+.form__btn--log-in {
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  display: block;
+  margin: 0 auto;
+
+  main.dark-theme & {
+    background-color: #fff;
+  }
+}
+
+.form__input-list {
+  margin-bottom: 30px;
+}
+.form__input-item {
+  &:first-child {
+    margin-bottom: 15px;
+  }
+}
+.form__btn-list {
+}
+.form__btn-item {
+  &:first-child {
+    margin-bottom: 15px;
+  }
+}
+
+.modal__close {
+  @media screen and (max-width: 767px) {
+    display: block;
+    margin-left: auto;
+
+    margin-right: 8px;
+  }
+
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+  }
+  background-color: transparent;
+  border: none;
+
+  main.dark-theme & {
+    fill: #fff;
+  }
+}

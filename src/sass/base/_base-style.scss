@@ -1,6 +1,21 @@
 body {
   color: var(--main-color-text);
   font-family: 'Roboto', sans-serif;
+
+  &.open-modal {
+    overflow: hidden;
+  }
+}
+
+// body::-webkit-scrollbar-thumb {
+//   background-color: hwb(24 3% 0% / 0.747);
+// }
+
+body::-webkit-scrollbar {
+  background-color: #1e2025;
+  width: 7px;
+
+  overflow: hidden;
 }
 
 main {

@@ -6,6 +6,11 @@ const tagsMenu = document.querySelector('.menu-tags');
 const tagsList = document.querySelector('.menu-tags__list');
 const sortMenu = document.querySelector('.user-tools__btn--menu');
 const scrollToTop = document.querySelector('.fix-wrapper');
+const btnOpenAutorization = document.querySelector(
+  '.user-tools__btn--autorization'
+);
+const autorizationForm = document.querySelector('.form__btn-list');
+const backdropAutorization = document.querySelector('.backdrop--autorization');
 
 export {
   gallery,
@@ -16,4 +21,7 @@ export {
   tagsList,
   sortMenu,
   scrollToTop,
+  btnOpenAutorization,
+  autorizationForm,
+  backdropAutorization,
 };
