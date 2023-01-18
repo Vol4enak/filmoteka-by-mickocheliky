@@ -3,8 +3,9 @@ const popularMovieFromServer = new PopularMovieFromServer();
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const formEl = document.querySelector('.home_header-form');
-const searchBtn = document.querySelector('.home_header-btn');
+// const searchBtn = document.querySelector('.home_header-btn');
 const mainListRef = document.querySelector('.film-list');
+const attantionEl = document.querySelector('.home_header-attention');
 
 formEl.addEventListener('submit', searchFilm);
 
@@ -12,7 +13,7 @@ async function searchFilm(e) {
   e.preventDefault();
 
   if (!Boolean(formEl[0].value.trim())) {
-    searchBtn.style.visibility = 'visible';
+    attantionEl.style.visibility = 'visible';
     Notify.warning('Введіть назву фільму.');
     return;
   }
