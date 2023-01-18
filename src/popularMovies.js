@@ -49,6 +49,8 @@ export const genresInfoUk = [
 ];
 
 const mainListRef = document.querySelector('.film-list');
+console.log(mainListRef);
+console.log(123);
 const paginationBox = document.querySelector('#pagination');
 
 const popularMovieFromServer = new PopularMovieFromServer();
@@ -93,10 +95,8 @@ export function addMurkupOnPage(array) {
     <img width="280" class="film-img" ${
       poster_path ? imageUrl : url
     }" alt="${title}" />
-
     <p class="film-name">
       ${title} <br />
-
       <span class="film-tag">${nameOfGenre} | ${
         release_date ? release_date.slice(0, 4) : 'There is no date'
       }</span>
