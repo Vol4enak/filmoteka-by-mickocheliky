@@ -1,10 +1,9 @@
 import api from '../fetch_api'
-import renderMovieModal from './render-modal';
-import { errorModal } from './js/notify';
+import {renderMovieModal} from './render-modal';
+
 import { gallery } from './refs';
 import { load, save, remove } from './local-storage';
-import NProgress from 'nprogress';
-import 'nprogress/nprogress.css';
+
 
 gallery.addEventListener('click', clickOnMovieHandler);
 
@@ -32,8 +31,7 @@ async function textModalBtn(id) {
       btnWatch.disabled = false;
       btnWatch.textContent = 'Remove from watched';
       btnWatch.classList.add('active');
-    }
-    setTimeout(changeText, 1000);
+    };
   } else {
     // console.log('нет такого в watched');
     btnWatch.textContent = 'Add to watched';
@@ -50,8 +48,7 @@ async function textModalBtn(id) {
       btnQueue.disabled = false;
       btnQueue.textContent = 'Remove from queue';
       btnQueue.classList.add('active');
-    }
-    setTimeout(changeText, 1000);
+    };
   } else {
     // console.log('нет такого в queue');
     btnQueue.textContent = 'Add to queue';
@@ -62,7 +59,7 @@ async function textModalBtn(id) {
 
 // Outer fetch by ID
 async function fetchById(id) {
-  NProgress.start();
+  
 
   try {
     const movieId = await api.getMovieById(id);
@@ -181,7 +178,7 @@ async function fetchById(id) {
     }
   }
 
-  NProgress.done();
+  
 }
 
 function inList(id, list) {
