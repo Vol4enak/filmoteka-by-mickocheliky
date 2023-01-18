@@ -59,10 +59,10 @@ export function btnQueue(modalQueue, queryText) {
 }
 
 function getIlocaltemWatchedme() {
-  const getItemWatched = localStorage.getItem('data-watched');
-  return (getItemWatched = JSON.parse(getItemWatched));
+  let getItemWatched = localStorage.getItem('data-watched');
+  return (parseItemWatched = JSON.parse(getItemWatched));
 }
 function getlocalItemQueue() {
-  const getItemQueue = localStorage.getItem('data-queue');
-  return (getItemQueue = JSON.parse(getItemQueue));
+  let getItemQueue = localStorage.getItem('data-queue');
+  return (parseItemQueue = JSON.parse(getItemQueue));
 }
