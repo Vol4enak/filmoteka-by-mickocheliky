@@ -39,6 +39,7 @@
 }
 .btn-close {
   position: absolute;
+
   top: 8px;
   right: 8px;
   width: 30px;
@@ -49,6 +50,9 @@
   border: none;
 }
 .btn-close__svg {
+  position: relative;
+  right: 6px;
+  bottom: 2px;
   width: 30px;
   height: 30px;
   stroke: currentColor;

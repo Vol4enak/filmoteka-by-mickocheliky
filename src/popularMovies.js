@@ -91,13 +91,13 @@ export function addMurkupOnPage(array) {
       } else {
         nameOfGenre = 'There is no genre';
       }
-      return `<li class="film-item" id="${id}">
+      return `<li class="film-item">
     <img width="280" class="film-img" ${
       poster_path ? imageUrl : url
-    }" alt="${title}" />
-    <p class="film-name">
+    }" alt="${title}" data-action="${id}" />
+    <p class="film-name"data-action="${id}">
       ${title} <br />
-      <span class="film-tag">${nameOfGenre} | ${
+      <span class="film-tag" data-action="${id}">${nameOfGenre} | ${
         release_date ? release_date.slice(0, 4) : 'There is no date'
       }</span>
 
