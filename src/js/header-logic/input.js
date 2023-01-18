@@ -41,7 +41,7 @@ async function paginationForSearchFetch() {
     const currentPage = evt.page;
     addSearchingMovieToPage(popularMovieFromServer.query, currentPage)
   })
-}
+
 
 // Функция ожидает значение из строки поиска и номер страницы и рендерит разметку
 async function addSearchingMovieToPage(value, searchPage) {

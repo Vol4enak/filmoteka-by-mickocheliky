@@ -1,6 +1,7 @@
 //import start page
 //import gallery, inputRef
 //import movie searcher
+import { addPopularMovieToPage } from '../../popularMovies';
 
 const btn1Ref = document.querySelector('[data-index="1"]');
 const btn2Ref = document.querySelector('[data-index="2"]');
@@ -17,18 +18,18 @@ const afterDotsRef = document.querySelector('#after');
 
 paginationRef.addEventListener('click', onPaginationClick);
 
-let currentPage = 1;
-
 let btns = document.querySelectorAll('.pagination-button');
 
 prevDotsRef.hidden = true;
 leftArrowRef.hidden = true;
 firstPageRef.hidden = true;
-
+export let currentPage = 1;
 function onPaginationClick(event) {
+
   if (event.target.tagName === 'BUTTON') {
-    if (Number(event.target.textContent)) {
-      currentPage = Number(event.target.textContent);
+    const numOfPage = Number(event.target.textContent);
+    if (numOfPage) {
+      addPopularMovieToPage(numOfPage);
     }
 
     prevDotsRef.hidden = true;
@@ -106,34 +107,3 @@ function onPaginationClick(event) {
     }
   }
 }
-
-//     gallery.innerHTML = '';
-//     window.scrollTo({ top: 0, behavior: 'smooth' });
-
-//     if (inputRef.value !== '') {
-//       movieSearcher(inputRef.value, currentPage);
-//     } else {
-//       startPage();
-//     }
-//   }
-// }
-
-// let pageSize = 9;
-
-// function defineResultsPerPage() {
-//   if (window.innerWidth >= 1024) {
-//     pageSize = 9;
-//   } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
-//     pageSize = 8;
-//   } else if (window.innerWidth < 768) {
-//     pageSize = 4;
-//   }
-//   return pageSize;
-// }
-
-// const secret = {
-//   r: 'goit',
-//   e: 'go it',
-// };
-
-// export { currentPage, defineResultsPerPage, secret };

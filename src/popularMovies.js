@@ -1,6 +1,8 @@
 import Pagination from 'tui-pagination';
 import {PopularMovieFromServer} from './fetch_api';
 
+import { currentPage } from './js/body-logic/pagination';
+
 
 export const genresInfo = [
   { id: 28, name: 'Action' },
@@ -54,9 +56,10 @@ const popularMovieFromServer = new PopularMovieFromServer();
 addPopularMovieToPage();
 paginationOnMainPage();
 
-
 // Функция ожидает номер страницы, делает запрос на сервер и рендерит разметку
+
 export async function addPopularMovieToPage(newPage = 1) {
+
   popularMovieFromServer.page = newPage;
   const popularMovie = await popularMovieFromServer
     .getPopularMovieFromServer()
@@ -64,7 +67,6 @@ export async function addPopularMovieToPage(newPage = 1) {
       return data;
     });
   mainListRef.innerHTML = '';
-
   addMurkupOnPage(popularMovie.results);
 }
 
@@ -87,14 +89,20 @@ export function addMurkupOnPage(array) {
       nameOfGenre = 'There is no genre';
     }
       return `<li class="film-item" id="${id}">
-    <img width="280" class="film-img" ${poster_path ? imageUrl: url}" alt="${title}" />
+    <img width="280" class="film-img" ${
+      poster_path ? imageUrl : url
+    }" alt="${title}" />
+
     <p class="film-name">
       ${title} <br />
+
       <span class="film-tag">${nameOfGenre} | ${release_date ? release_date.slice(0, 4) : 'There is no date'}</span>
+
     </p>
-  </li>`
-  }).join('');
-  mainListRef.insertAdjacentHTML('beforeend', murkupFromArray)
+  </li>`;
+    })
+    .join('');
+  mainListRef.insertAdjacentHTML('beforeend', murkupFromArray);
 }
 
 // Функция ожидает массив id в виде чисел и возвращает массив жанров для конкретного фильма
