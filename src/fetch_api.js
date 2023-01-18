@@ -1,20 +1,19 @@
-export class PopularMovieFromServer {
+export default class PopularMovieFromServer {
   constructor() {
     this.currentPage = 1;
-    this.searchQuery = '';
   }
 
   getPopularMovieFromServer() {
     const API_KEY = '197007a676a4d3e84c6bdb6f21b18a1a';
     return fetch(
-      `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}&page=${this.page}`
+      `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}&page=${this.page}&language=uk`
     ).then(response => response.json());
   }
 
-  getSubmitMovieFromServer() {
+  getSubmitMovieFromServer(filmName) {
     const API_KEY = '197007a676a4d3e84c6bdb6f21b18a1a';
     return fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&page=${this.page}&query=${this.searchQuery}&include_adult=false`
+      `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&page=${this.page}&query=${filmName}`
     ).then(response => response.json());
   }
 
@@ -24,13 +23,5 @@ export class PopularMovieFromServer {
 
   set page(pageNumber) {
     this.currentPage = pageNumber;
-  }
-
-  get query() {
-    return this.searchQuery;
-  }
-
-  set query(newQuery) {
-    this.searchQuery = newQuery;
   }
 }
