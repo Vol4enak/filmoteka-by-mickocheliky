@@ -19,7 +19,7 @@ async function searchFilm(e) {
 
   paginationBox.innerHTML = '';
   let searchMovieValue = e.target.elements.query.value;
-
+  let qwe = 5;
   if (!Boolean(searchMovieValue.trim())) {
     searchBtn.style.visibility = 'visible';
     Notify.warning('Enter the name of movie.');
