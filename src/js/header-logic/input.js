@@ -9,16 +9,17 @@ const popularMovieFromServer = new PopularMovieFromServer();
 
 const formEl = document.querySelector('.home_header-form');
 const searchBtn = document.querySelector('.home_header-btn');
-const mainListRef = document.querySelector('.film-list');
+const mainListRef = document.querySelector('.film-list-home');
 const paginationBox = document.querySelector('#pagination');
 
 formEl.addEventListener('submit', searchFilm);
 
 async function searchFilm(e) {
   e.preventDefault();
+
   paginationBox.innerHTML = '';
   let searchMovieValue = e.target.elements.query.value;
-
+  console.log(searchMovieValue);
   if (!Boolean(searchMovieValue.trim())) {
     searchBtn.style.visibility = 'visible';
     Notify.warning('Enter the name of movie.');
