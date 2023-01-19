@@ -124,7 +124,7 @@
     // list-style: none;
 }
 
-.header-nav__item:not(:last-child) {
+.header-nav__item:nth-child(-n + 2) {
     margin-right: 40px;
 }
 

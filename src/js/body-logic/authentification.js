@@ -1,181 +1,173 @@
-import Notiflix from "notiflix"
+import Notiflix from 'notiflix';
 
-const signInHeaderEl = document.querySelector(".header-sign-in")
-const popupEl = document.querySelector(".sign-popup")
-const cancelBtnEl = document.querySelector(".login-cancel-button")
-const libraryEl = document.querySelector(".header-my-library")
-const libralyLiEl = document.querySelector(".header-nav__item-lib")
+const signInHeaderEl = document.querySelector('.header-sign-in');
+const popupEl = document.querySelector('.sign-popup');
+const cancelBtnEl = document.querySelector('.login-cancel-button');
+const libraryEl = document.querySelector('.header-my-library');
+const libralyLiEl = document.querySelector('.header-nav__item-lib');
 
-signInHeaderEl.addEventListener("click", openModal)
+signInHeaderEl.addEventListener('click', openModal);
 
-cancelBtnEl.addEventListener("click", closeModal)
+cancelBtnEl.addEventListener('click', closeModal);
 
 function openModal() {
-    popupEl.style.display = "flex"
-    document.body.style.overflow = "hidden"
-    document.body.style.height = "100%"
+  popupEl.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  document.body.style.height = '100%';
 }
 
 function closeModal() {
-    popupEl.style.display = "none"
-    document.body.style.overflow = "visible"
+  popupEl.style.display = 'none';
+  document.body.style.overflow = 'visible';
 }
 
+const emailEl = document.querySelector('.sign-popup-email-input');
+const passwordEL = document.querySelector('.sign-popup-psw-input');
+const signupbtnEl = document.querySelector('.modal-signup-button');
+const loginbtnEl = document.querySelector('.modal-log-in-button');
+const cancelbtnEL = document.querySelector('.login-cancel-button');
+const logoutbtnEl = document.querySelector('.header-sign-out');
 
-const emailEl = document.querySelector(".sign-popup-email-input")
-const passwordEL = document.querySelector(".sign-popup-psw-input")
-const signupbtnEl = document.querySelector(".modal-signup-button")
-const loginbtnEl = document.querySelector(".modal-log-in-button")
-const cancelbtnEL = document.querySelector(".login-cancel-button")
-const logoutbtnEl = document.querySelector(".header-sign-out")
-
-
-import { initializeApp } from "firebase/app";
+import { initializeApp } from 'firebase/app';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCiganVehDRWNu8DaopL49QNtQWcOnsRz8",
-    authDomain: "filmoteka-3953e.firebaseapp.com",
-    projectId: "filmoteka-3953e",
-    storageBucket: "filmoteka-3953e.appspot.com",
-    messagingSenderId: "570128539922",
-    appId: "1:570128539922:web:4bc967e78fce05a40693cb",
-    measurementId: "G-P61BZ6KQ5V"
+  apiKey: 'AIzaSyCiganVehDRWNu8DaopL49QNtQWcOnsRz8',
+  authDomain: 'filmoteka-3953e.firebaseapp.com',
+  projectId: 'filmoteka-3953e',
+  storageBucket: 'filmoteka-3953e.appspot.com',
+  messagingSenderId: '570128539922',
+  appId: '1:570128539922:web:4bc967e78fce05a40693cb',
+  measurementId: 'G-P61BZ6KQ5V',
 };
 
 import {
-    getAuth,
-    signInWithEmailAndPassword,
-    createUserWithEmailAndPassword,
-    onAuthStateChanged,
-    signOut,
-} from "firebase/auth";
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from 'firebase/auth';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+const showLoginError = error => {
+  if (error.code === 'auth/wrong-password') {
+    Notiflix.Notify.failure('Wrong password. Try again.');
+    return;
+  }
+  if (error.code === 'auth/email-already-in-use') {
+    Notiflix.Notify.failure('This email is already in use');
+    return;
+  }
+  if (error.code === 'auth/weak-password') {
+    Notiflix.Notify.failure('Password must contain at least 6 characters');
+    return;
+  }
+  if (error.code === 'auth/user-not-found') {
+    Notiflix.Notify.failure('There is no user with such email');
+    return;
+  }
+  if (error.code === 'auth/invalid-email') {
+    Notiflix.Notify.failure('Please provide valid email');
+    return;
+  }
+  if (error.code === 'auth/too-many-requests') {
+    Notiflix.Notify.failure('Too many requests');
+    return;
+  }
+  if (error.code === 'auth/internal-error') {
+    Notiflix.Notify.failure('Please provide password');
+    return;
+  } else {
+    Notiflix.Notify.failure('Error: ${error}');
+    return;
+  }
+};
 
+const loginEmailPassword = async e => {
+  e.preventDefault();
+  const loginEmail = emailEl.value;
+  const loginPassword = passwordEL.value;
 
-const showLoginError = (error) => {
+  try {
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      loginEmail,
+      loginPassword
+    );
+    Notiflix.Notify.success('You signed in');
+    monitorAuthState();
+  } catch (error) {
+    showLoginError(error);
+  }
+};
 
-    if (error.code === "auth/wrong-password") {
-        Notiflix.Notify.failure(`Wrong password. Try again.`)
-        return
-    }
-    if (error.code === "auth/email-already-in-use") {
-        Notiflix.Notify.failure(`This email is already in use`)
-        return
-    }
-    if (error.code === "auth/weak-password") {
-        Notiflix.Notify.failure(`Password must contain at least 6 characters`)
-        return
-    }
-    if (error.code === "auth/user-not-found") {
-        Notiflix.Notify.failure(`There is no user with such email`)
-        return
-    }
-    if (error.code === "auth/invalid-email") {
-        Notiflix.Notify.failure(`Please provide valid email`)
-        return
-    }
-    if (error.code === "auth/too-many-requests") {
-        Notiflix.Notify.failure(`Too many requests`)
-        return
-    }
-    if (error.code === "auth/internal-error") {
-        Notiflix.Notify.failure(`Please provide password`)
-        return
-    }
-    else {
-        Notiflix.Notify.failure(`Error: ${error}`)
-        return
-    }
-}
+const createAccount = async e => {
+  e.preventDefault();
+  const loginEmail = emailEl.value;
+  const loginPassword = passwordEL.value;
 
-const loginEmailPassword = async (e) => {
-    e.preventDefault();
-    const loginEmail = emailEl.value;
-    const loginPassword = passwordEL.value;
-
-    try {
-        const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-
-        Notiflix.Notify.success("You signed in")
-
-        monitorAuthState()
-    }
-    catch (error) {
-        showLoginError(error)
-    }
-}
-
-const createAccount = async (e) => {
-    e.preventDefault();
-    const loginEmail = emailEl.value;
-    const loginPassword = passwordEL.value;
-
-    try {
-        const userCredential = await createUserWithEmailAndPassword(auth, loginEmail, loginPassword)
-
-        Notiflix.Notify.success("You signed up")
-
-        monitorAuthState()
-    }
-    catch (error) {
-        showLoginError(error)
-    }
-}
+  try {
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      loginEmail,
+      loginPassword
+    );
+    Notiflix.Notify.success('You signed up');
+    monitorAuthState();
+  } catch (error) {
+    showLoginError(error);
+  }
+};
 
 const logout = async () => {
-    await signOut(auth)
-
-    Notiflix.Notify.success("You logged out")
-
-
-}
+  await signOut(auth);
+  Notiflix.Notify.success('You logged out');
+};
 
 const monitorAuthState = async () => {
-    onAuthStateChanged(auth, user => {
-        if (user) {
-            logoutbtnEl.classList.remove("visually-hidden")
-            signInHeaderEl.classList.add("visually-hidden")
-            signedState()
-            closeModal()
-        }
-        else {
-            logoutbtnEl.classList.add("visually-hidden")
-            signInHeaderEl.classList.remove("visually-hidden")
-            signedState()
-        }
-    })
-}
+  onAuthStateChanged(auth, user => {
+    if (user) {
+      logoutbtnEl.classList.remove('visually-hidden');
+      signInHeaderEl.classList.add('visually-hidden');
+      signedState();
+      closeModal();
+    } else {
+      logoutbtnEl.classList.add('visually-hidden');
+      signInHeaderEl.classList.remove('visually-hidden');
+      signedState();
+    }
+  });
+};
 
-monitorAuthState()
+monitorAuthState();
 
 function addVisHidden() {
-    if (document.location.href === "http://localhost:1234/") {
-        mainSignbtn.classList.add("visually-hidden")
-    }
+  if (document.location.href === 'http://localhost:1234/') {
+    mainSignbtn.classList.add('visually-hidden');
+  }
 }
 
-loginbtnEl.addEventListener("click", loginEmailPassword)
+loginbtnEl.addEventListener('click', loginEmailPassword);
 
-signupbtnEl.addEventListener("click", createAccount)
+signupbtnEl.addEventListener('click', createAccount);
 
-cancelbtnEL.addEventListener("click", closeModal)
+cancelbtnEL.addEventListener('click', closeModal);
 
-logoutbtnEl.addEventListener("click", logout)
+logoutbtnEl.addEventListener('click', logout);
 
-document.addEventListener("keydown", function (evt) {
-    if (evt.keyCode === 27) {
-        closeModal();
-    }
-})
+document.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === 27) {
+    closeModal();
+  }
+});
 
 function signedState() {
-    if (signInHeaderEl.classList.contains('visually-hidden')) {
-        libraryEl.setAttribute("href", "./my-lib.html")
-    } else {
-        libraryEl.setAttribute("href", "")
-        Notiflix.Notify.info("Please sign in if you want to use your library")
-    }
+  if (signInHeaderEl.classList.contains('visually-hidden')) {
+    libraryEl.setAttribute('href', './my-lib.html');
+  } else {
+    libraryEl.setAttribute('href', '');
+    Notiflix.Notify.info('Please sign in if you want to use your library');
+  }
 }
