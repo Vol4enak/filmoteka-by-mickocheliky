@@ -1,0 +1,85 @@
+.sign-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.modal-sign-button{
+    background: #fff;
+    text-transform: uppercase;
+    color: #34495e;
+    padding: 10px 15px;
+    font-weight: bolder;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.4s;
+    cursor: pointer;
+    box-shadow: 6px 6px 29px -4px rgba(0, 0, 0, 0.35);
+}
+
+.sign-popup{
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.sign-popup-content{
+    background: #fff;
+    height: 500px;
+    width: 650px;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.sign-popup-title{
+    margin-top: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #34495e;
+     font-weight: bolder;
+    font-size: 38px;
+}
+
+.sign-popup-inputs{
+    display: block;
+    margin: 20px auto;
+    width: 60%;
+    padding: 8px;
+    border: 2px solid gray;
+}
+
+.sign-input-info-email{
+    margin-top: 50px;
+}
+
+.sign-modal-btn-wrap{
+    margin-top: 20;
+    margin-bottom: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100;
+    
+}
+
+.login-cancel-button{
+    margin: auto;
+    padding-left: 100;
+    padding-right: 100;
+}
+
+.login-button-wrapped{
+    padding-left: 50;
+    padding-right: 50;
+}

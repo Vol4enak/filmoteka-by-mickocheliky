@@ -1,28 +1,23 @@
-.button {
-  display: block;
-  min-width: 130px;
-  min-height: 44px;
-
-  background: transparent;
-  border: 1px solid #ffffff;
-  border-radius: 5px;
-
+.header-list--lib__btn-watched,
+.header-list--lib__btn-queue {
+  width: 130px;
+  height: 44px;
+  text-transform: uppercase;
+  color: $main-white;
   font-family: 'Roboto';
-  font-style: normal;
   font-weight: 500;
   font-size: 12px;
-  line-height: 1, 33;
+  line-height: 16px;
+  border-radius: 5px;
+  border: 1px solid $main-white;
+  background-color: transparent;
 
-  align-items: center;
-
-  text-transform: uppercase;
-
-  color: #ffffff;
-}
-
-.button-bar__btn--active {
-  background: transparent;
-  background: #ff6b01;
-  border: 0px;
-  box-shadow: (0px 8px 43px rgba(255, 107, 1, 0.6));
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  @media screen and (min-width: 768px) {
+    width: 152px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 148px;
+    height: 42px;
+  }
 }
