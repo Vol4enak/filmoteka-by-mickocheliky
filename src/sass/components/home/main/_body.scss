@@ -68,7 +68,7 @@
   }
   .film-card-section {
     padding-bottom: 60px;
-    padding-top: 60px;
+    padding-top: 20px;
   }
 }
 
@@ -87,6 +87,10 @@
   .film-name {
     font-size: 16px;
     line-height: 120%;
+    transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    main.dark-theme & {
+      color: #fff;
+    }
   }
   .film-tag {
     line-height: 120%;
