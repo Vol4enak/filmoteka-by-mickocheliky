@@ -3,8 +3,8 @@ import Notiflix from "notiflix"
 const signInHeaderEl = document.querySelector(".header-sign-in")
 const popupEl = document.querySelector(".sign-popup")
 const cancelBtnEl = document.querySelector(".login-cancel-button")
-
-
+const libraryEl = document.querySelector(".header-my-library")
+const libralyLiEl = document.querySelector(".header-nav__item-lib")
 
 signInHeaderEl.addEventListener("click", openModal)
 
@@ -98,9 +98,10 @@ const loginEmailPassword = async (e) => {
 
     try {
         const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-    
+
+        Notiflix.Notify.success("You signed in")
+
         monitorAuthState()
-        const removeSignbtn = await addVisHidden
     }
     catch (error) {
         showLoginError(error)
@@ -114,7 +115,9 @@ const createAccount = async (e) => {
 
     try {
         const userCredential = await createUserWithEmailAndPassword(auth, loginEmail, loginPassword)
-      
+
+        Notiflix.Notify.success("You signed up")
+
         monitorAuthState()
     }
     catch (error) {
@@ -125,7 +128,9 @@ const createAccount = async (e) => {
 const logout = async () => {
     await signOut(auth)
 
-    // Notiflix.Notify.success("Signed out")
+    Notiflix.Notify.success("You logged out")
+
+
 }
 
 const monitorAuthState = async () => {
@@ -133,16 +138,18 @@ const monitorAuthState = async () => {
         if (user) {
             logoutbtnEl.classList.remove("visually-hidden")
             signInHeaderEl.classList.add("visually-hidden")
-            Notiflix.Notify.success("You signed in")
+            signedState()
             closeModal()
         }
         else {
-            Notiflix.Notify.success("You logged out")
             logoutbtnEl.classList.add("visually-hidden")
             signInHeaderEl.classList.remove("visually-hidden")
+            signedState()
         }
     })
 }
+
+monitorAuthState()
 
 function addVisHidden() {
     if (document.location.href === "http://localhost:1234/") {
@@ -157,3 +164,18 @@ signupbtnEl.addEventListener("click", createAccount)
 cancelbtnEL.addEventListener("click", closeModal)
 
 logoutbtnEl.addEventListener("click", logout)
+
+document.addEventListener("keydown", function (evt) {
+    if (evt.keyCode === 27) {
+        closeModal();
+    }
+})
+
+function signedState() {
+    if (signInHeaderEl.classList.contains('visually-hidden')) {
+        libraryEl.setAttribute("href", "./my-lib.html")
+    } else {
+        libraryEl.setAttribute("href", "")
+        Notiflix.Notify.info("Please sign in if you want to use your library")
+    }
+}
