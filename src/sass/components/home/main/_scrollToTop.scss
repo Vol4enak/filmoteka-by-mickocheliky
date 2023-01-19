@@ -1,0 +1,20 @@
+.fix-wrapper {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+.scroll-to-top {
+}
+
+.arrow-top {
+  &:hover {
+    fill: #ff6b08;
+  }
+
+  main.dark-theme & {
+    fill: #fff;
+    &:hover {
+      fill: #ff6b08;
+    }
+  }
+}
