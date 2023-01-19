@@ -2,31 +2,57 @@
   <include src="./partials/home-page/userBar.html"></include>
   <section class="film-card-section">
     <div class="container">
-      <ul class="film-list"></ul>
-      <div class="pagination-container">
-        <button class="pagination-button arrow-left">
-          <svg class="icon-arrow-left" width="16" height="16">
-            <use href="./images/symbol-defs.svg#icon-arrow-left"></use>
-          </svg>
-        </button>
-        <button class="pagination-button first-button">1</button>
-        <span class="dots" id="previous">...</span>
-        <button class="pagination-button pagination--current" data-index="1">
-          1
-        </button>
-        <button class="pagination-button" data-index="2">2</button>
-        <button class="pagination-button" data-index="3">3</button>
-        <button class="pagination-button" data-index="4">4</button>
-        <button class="pagination-button" data-index="5">5</button>
-        <span class="dots" id="after">...</span>
-        <button class="pagination-button last-button">1000</button>
-        <button class="pagination-button arrow-right">
-          <svg class="icon-arrow-right" width="16" height="16">
-            <use href="./images/symbol-defs.svg#icon-arrow-right"></use>
-          </svg>
-        </button>
+      <ul class="film-list-home"></ul>
+
+      <div id="pagination" class="tui-pagination"></div>
+
+      <div class="modal visibility">
+        <div class="modal-window" id="checking">
+          <button class="btn-close" type="button">
+            <svg class="btn-close__svg" width="30" height="30">
+              <use href="./images/symbol-defs.svg#icon-close"></use>
+            </svg>
+          </button>
+          <div class="clearing-modal">
+
+          </div>
+        </div>
+        <div class="overlay"></div>
       </div>
     </div>
+
+
+  </section>
+
+  <div class="sign-container">
+    <a href="" class="login-button">Login</a>
+  </div> -->
+  <div class="sign-popup">
+    <div class="sign-popup-content">
+      <h1 class="sign-popup-title">Sign in</h1>
+      <p class="sign-input-info sign-input-info-email">Write your email</p>
+      <input type="text" placeholder="Email" class="sign-popup-email-input sign-popup-inputs" required />
+      <p class="sign-input-info">Write your password</p>
+      <input type="password" placeholder="Password" class="sign-popup-psw-input sign-popup-inputs" required />
+      <p>
+        By creating an account you agree to Firebase
+        <a href="https://firebase.google.com/support/privacy" style="color: dodgerblue" target="_blank">Terms &
+          Privacy</a>
+      </p>
+      <div class="sign-modal-btn-wrap">
+        <button type="button" class="modal-sign-button login-button-wrapped modal-log-in-button">
+          Log In
+        </button>
+        <button type="button" class="modal-sign-button login-button-wrapped modal-signup-button">
+          Sign Up
+        </button>
+      </div>
+      <!-- <button type="button" class="login-button">Log out</button> -->
+      <button type="button" class="modal-sign-button login-cancel-button">
+        Cancel
+      </button>
+    </div>
+
   </section>
 
   <include src="./partials/home-page/scrollToTop.html"></include>
