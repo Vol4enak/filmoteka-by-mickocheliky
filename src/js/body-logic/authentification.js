@@ -98,7 +98,9 @@ const loginEmailPassword = async (e) => {
 
     try {
         const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+
         Notiflix.Notify.success("You signed in")
+
         monitorAuthState()
     }
     catch (error) {
@@ -113,7 +115,9 @@ const createAccount = async (e) => {
 
     try {
         const userCredential = await createUserWithEmailAndPassword(auth, loginEmail, loginPassword)
+
         Notiflix.Notify.success("You signed up")
+
         monitorAuthState()
     }
     catch (error) {
@@ -123,7 +127,9 @@ const createAccount = async (e) => {
 
 const logout = async () => {
     await signOut(auth)
+
     Notiflix.Notify.success("You logged out")
+
 
 }
 

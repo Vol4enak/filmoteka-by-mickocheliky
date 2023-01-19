@@ -3,9 +3,9 @@ const signInEl = document.querySelector(".header-sign-in")
 
 export function nnn(value) {
     let authState = 0;
-    console.log(authState)
+  
     authState += value;
-    console.log(authState)
+ 
     return authState;
 }
 
