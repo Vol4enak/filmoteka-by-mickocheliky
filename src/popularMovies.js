@@ -3,7 +3,6 @@ import { PopularMovieFromServer } from './fetch_api';
 import { getFetchedById } from './fetch_api';
 import { currentPage } from './js/body-logic/pagination';
 
-
 const genresInfo = [
   { id: 28, name: 'Action' },
   { id: 12, name: 'Adventure' },
@@ -164,4 +163,3 @@ export function paginationOptions(amount) {
   };
   return options;
 }
-

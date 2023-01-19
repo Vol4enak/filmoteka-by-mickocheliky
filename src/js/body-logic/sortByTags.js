@@ -1,5 +1,5 @@
 import { tagsMenu, tagsList, sortMenu, gallery } from '../refs';
-console.log(gallery);
+
 const API_KEY = 'b1cb6bb9f0fb8b16da0ef0bac91fc5ae';
 const BASE_URL = 'https://api.themoviedb.org';
 const KEY_STORAGE_FILMS = 'films';

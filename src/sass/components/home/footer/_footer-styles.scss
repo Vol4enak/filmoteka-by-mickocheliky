@@ -1,0 +1,39 @@
+footer {
+  background-color: $main-gray;
+  padding: 30px 0;
+}
+
+.footer-list {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2px;
+  }
+}
+
+.footer-text--underline {
+  text-decoration: underline;
+}
+
+.footer-list--text {
+  font-family: 'Roboto';
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: $main-space-black;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+.copyrite {
+  padding-right: 8px;
+}
+.footer-list__svg {
+  padding: 0 10px;
+}
