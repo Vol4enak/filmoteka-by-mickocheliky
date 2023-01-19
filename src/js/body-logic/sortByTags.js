@@ -1,5 +1,5 @@
 import { tagsMenu, tagsList, sortMenu, gallery } from '../refs';
-
+console.log(gallery);
 const API_KEY = 'b1cb6bb9f0fb8b16da0ef0bac91fc5ae';
 const BASE_URL = 'https://api.themoviedb.org';
 const KEY_STORAGE_FILMS = 'films';
@@ -68,7 +68,7 @@ async function getAllTags() {
 
 function createCard(film) {
   const { overview, title, poster_path, release_date, genre_ids, id } = film;
-  console.log(genre_ids);
+
   const tags = checkTags(getTagsById(genre_ids));
 
   return ` <li data-id="${id}" class="contents__item"><a href="./">${
@@ -90,7 +90,6 @@ function createCard(film) {
 }
 
 function renderCards(films) {
-  console.log(films);
   const markup = films.map(createCard).join('');
 
   gallery.innerHTML = markup;

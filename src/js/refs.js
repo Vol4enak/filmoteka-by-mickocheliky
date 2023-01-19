@@ -1,4 +1,4 @@
-const gallery = document.querySelector('.film-list');
+const gallery = document.querySelector('.film-list-home');
 const pagiCont = document.querySelector('.pagination-container');
 const toggleThemeBtn = document.querySelector('.user-tools__btn--toggle');
 const mainEl = document.querySelector('main');
