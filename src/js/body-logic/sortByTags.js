@@ -34,7 +34,7 @@ tagsList.addEventListener('click', event => {
 
 function getPopularSortBy(id) {
   return fetch(
-    `${BASE_URL}/3/discover/movie?sort_by=popularity.desc&with_genres=${id}&api_key=${API_KEY}&${this._paga}`
+    `${BASE_URL}/3/discover/movie?sort_by=popularity.desc&with_genres=${id}&api_key=${API_KEY}`
   )
     .then(r => r.json())
     .then(data => {
@@ -44,16 +44,7 @@ function getPopularSortBy(id) {
     });
 }
 
-function getFilms() {
-  return fetch(
-    `${BASE_URL}/3/search/movie?api_key=${API_KEY}&query=${this._search}&language=en-US&page=${this._paga}`
-  )
-    .then(r => r.json())
-    .then(data => {
-      localStorage.setItem(KEY_STORAGE_FILMS, JSON.stringify(data));
-      return data.results;
-    });
-}
+
 
 function getGenres() {
   const url = `${BASE_URL}/3/genre/movie/list?api_key=${API_KEY}&language=en-US`;
