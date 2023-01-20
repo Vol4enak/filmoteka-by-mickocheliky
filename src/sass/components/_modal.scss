@@ -50,6 +50,9 @@
     width: 806px;
     height: 558px;
   }
+  main.dark-theme & {
+    background-color: rgb(0, 0, 0);
+  }
 }
 
 .modal-img {
@@ -77,15 +80,23 @@
 
   background-color: transparent;
   border: none;
+  main.dark-theme & {
+    border-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50%;
+  }
 }
 .btn-close__svg {
   position: relative;
-  right: 6px;
+  right: 7px;
   bottom: 2px;
   width: 30px;
   height: 30px;
   stroke: currentColor;
   fill: currentColor;
+  main.dark-theme & {
+    color: #fff;
+  }
 }
 
 .modal-info {
@@ -114,6 +125,9 @@
     font-size: 30px;
     line-height: 35px;
   }
+  main.dark-theme & {
+    color: #fff;
+  }
 }
 .mobal__list--description,
 .mobal__list--info {
@@ -123,10 +137,14 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
+   main.dark-theme & {
+    color: #fff;
+  }
 }
 
 .mobal__list--description {
   color: $information-modal-text;
+  
 }
 
 .helper-in-modal {
@@ -148,6 +166,7 @@
 .module__text-votes,
 .module__text-popularity {
   line-height: 16px;
+
 }
 .module__text-vote {
   padding: 1px 10px;
@@ -170,6 +189,9 @@
   line-height: 16px;
   text-transform: uppercase;
   color: $main-black;
+  main.dark-theme & {
+    color: #fff;
+  }
 }
 
 .mobal__title--about-text {
@@ -189,6 +211,9 @@
     width: 391px;
     height: 160px;
   }
+  main.dark-theme & {
+    color: #fff;
+  }
 }
 
 .modal-btn__list {
@@ -201,6 +226,9 @@
   font-size: 12px;
   line-height: 16px;
   text-align: left;
+  main.dark-theme & {
+    color: #fff;
+  }
 }
 .modal-btn__watched,
 .modal-btn__queue {
@@ -233,5 +261,9 @@
   @media screen and (min-width: 1280px) {
     width: 136px;
     height: 44px;
+  }
+  main.dark-theme & {
+    color: #fff;
+    border: 1px solid #fff;
   }
 }
