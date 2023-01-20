@@ -126,19 +126,19 @@ function LibCardrenderQueue() {
         genres = genres.slice(0, 2) + ', other';
       }
       genres = genres.toString().replaceAll(',', ', ');
-      const render = `<article class="box" ">
-            <img class="movie-preview"src="${imgPreview}${poster_path}" alt="123" width="336" height="455" data-action="${id}" >
+      const render = `<li class="film-item" >
+            <img class="film-img" src="${imgPreview}${poster_path}" alt="123" width="336" height="455" data-action="${id}" >
             <ul class="info-list"data-action="${id}">
               <li>
-              <p class="info-list__title"data-action="${id}">${original_title}</p>
+              <p class="film-name"data-action="${id}">${original_title}</p>
               </li>
               <li>
-            <p class="info-list__genres"data-action="${id}">${genres} | ${release_date.slice(
+            <p class="film-tag" data-action="${id}">${genres} | ${release_date.slice(
         0,
         4
       )}</p></li>
           </ul>
-                      </article>`;
+                      </li>`;
 
       return ulEl.insertAdjacentHTML('beforeend', render);
     });

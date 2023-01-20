@@ -1,7 +1,7 @@
 import Pagination from 'tui-pagination';
 import { PopularMovieFromServer } from './fetch_api';
-import { getFetchedById } from './fetch_api';
-import { currentPage } from './js/body-logic/pagination';
+
+
 
 const genresInfo = [
   { id: 28, name: 'Action' },
