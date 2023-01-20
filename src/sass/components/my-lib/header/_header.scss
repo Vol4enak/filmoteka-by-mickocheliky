@@ -21,13 +21,14 @@
   margin-right: auto;
 
   max-width: 320px;
-  min-height: 230px;
+  height: 230px;
 
   @media screen and (min-width: 320px) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url('../images/lib-images/header/header-bg-x1/header-bg-768-x1.jpg');
 
     max-width: 768px;
+ 
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
@@ -44,7 +45,7 @@
       url('../images/lib-images/header/header-bg-x1/header-bg-1280-x1.jpg');
 
     max-width: 1280px;
-
+   height: 216px;
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {

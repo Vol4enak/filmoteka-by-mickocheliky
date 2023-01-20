@@ -30,6 +30,9 @@ footer {
     font-size: 16px;
     line-height: 19px;
   }
+  footer.dark-theme & {
+      color: #fff;
+    }
 }
 .copyrite {
   padding-right: 8px;

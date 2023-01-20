@@ -1,4 +1,4 @@
-import { getFetchedById } from "../../fetch_api";
+import { getFetchedById } from '../../fetch_api';
 const modalBox = document.querySelector('.clearing-modal');
 export function renderModalInformation(name) {
   let {
@@ -28,8 +28,9 @@ export function renderModalInformation(name) {
     genres = genres.slice(0, 1);
 
     const render = ` 
-      <img src="${imgPreview}${poster_path}" alt="123" width="240" height="357">
-                <h2 class="mobal__title">${original_title}</h2>
+   
+     <div class="modal-box-img"><img  src="${imgPreview}${poster_path}" alt="123" class="modal-img" ></div>
+      <div class="modal-info"> <h2 class="mobal__title">${original_title}</h2>
                 <div class="helper-in-modal">
                     <ul class="mobal__list--description">
                         <li class="mobal-list__item">
@@ -64,7 +65,9 @@ export function renderModalInformation(name) {
                 </div>
                 <p class="mobal__title--about">About</p>
                 <p class="mobal__title--about-text">${overview}</p>
-                ${zxc(id)}`;
+                ${zxc(id)}</div>
+     
+               `;
 
     return modalBox.insertAdjacentHTML('beforeend', render);
   });

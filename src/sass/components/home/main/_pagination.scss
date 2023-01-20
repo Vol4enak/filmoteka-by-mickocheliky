@@ -10,6 +10,7 @@
   color: white;
 }
 
+
 .tui-ico-ellipsis,
 .tui-ico-first,
 .tui-ico-last,
@@ -112,6 +113,16 @@
 .tui-pagination .tui-ico-first {
   width: 11px;
   height: 10px;
+}
+.tui-ico-first {
+  .dark-theme & {
+    color: white;
+  }
+}
+.tui-ico-last {
+  .dark-theme & {
+    color: white;
+  }
 }
 
 .tui-pagination .tui-ico-prev {
@@ -219,5 +230,10 @@
   .tui-pagination .tui-next-is-ellip {
     border-left: 0;
     display: none;
+  }
+}
+.tui-page-btn {
+  .dark-theme & {
+    color: white;
   }
 }

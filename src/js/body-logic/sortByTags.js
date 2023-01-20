@@ -20,6 +20,10 @@ sortMenu.addEventListener('click', e => {
 
 tagsList.addEventListener('click', event => {
   event.preventDefault();
+  const nameOfEl = event.target.nodeName;
+  if (nameOfEl !== 'A') {
+    return;
+  }
 
   const currentSortBy = Number(event.target.dataset.id);
 

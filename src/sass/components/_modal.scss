@@ -11,7 +11,12 @@
   overflow-y: auto;
 
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  
+  @media screen and (min-width: 768px) {
+    top: 226px;
+  }
+  @media screen and (min-width: 1280px) {
+    top: 170px;
+  }
 }
 
 .modal .overlay {
@@ -34,9 +39,33 @@
   padding: 48px 20px 40px 20px;
   background-color: $main-white;
   border-radius: 5px;
-  box-shadow: 0px 1px 3px rgba(255, 255, 255, 0.12), 0px 1px 1px rgba(255, 255, 255, 0.14),
-    0px 2px 1px rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 1px 3px rgba(255, 255, 255, 0.12),
+    0px 1px 1px rgba(255, 255, 255, 0.14), 0px 2px 1px rgba(255, 255, 255, 0.2);
+  @media screen and (min-width: 768px) {
+    padding: 40px 0px 0px 36px;
+    width: 704px;
+    height: 552px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 806px;
+    height: 558px;
+  }
 }
+
+.modal-img {
+  width: 240px;
+  height: 357px;
+  border-radius: 5px;
+  @media screen and (min-width: 768px) {
+    width: 264px;
+    height: 374px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 375px;
+    height: 478px;
+  }
+}
+
 .btn-close {
   position: absolute;
 
@@ -59,6 +88,21 @@
   fill: currentColor;
 }
 
+.modal-info {
+  @media screen and (min-width: 768px) {
+    margin-left: 63px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-left: 16px;
+  }
+}
+
+.clearing-modal {
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}
+
 .mobal__title {
   margin-top: 20px;
   font-family: 'Roboto';
@@ -66,6 +110,10 @@
   font-size: 20px;
   line-height: 23px;
   color: $main-black;
+  @media screen and (min-width: 1280px) {
+    font-size: 30px;
+    line-height: 35px;
+  }
 }
 .mobal__list--description,
 .mobal__list--info {
@@ -125,12 +173,22 @@
 }
 
 .mobal__title--about-text {
+  height: 160px;
+  overflow-y: scroll;
   margin-top: 8px;
   font-family: 'Roboto';
   font-weight: 500;
   font-size: 12px;
   line-height: 20px;
   color: $main-black;
+  @media screen and (min-width: 768px) {
+    width: 264px;
+    height: 236px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 391px;
+    height: 160px;
+  }
 }
 
 .modal-btn__list {
@@ -166,5 +224,14 @@
     background-color: $main-orange;
     color: $main-white;
     border: 1px solid $main-orange;
+  }
+  @media screen and (min-width: 768px) {
+    padding-left: 9px;
+    width: 125px;
+    height: 44px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 136px;
+    height: 44px;
   }
 }

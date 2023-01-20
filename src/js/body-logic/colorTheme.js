@@ -1,4 +1,4 @@
-import { toggleThemeBtn, mainEl } from '../refs';
+import { toggleThemeBtn, mainEl, footerEl, paginationEl } from '../refs';
 const KEY_STORAGE_THEME = 'Theme';
 
 initialTheme();
@@ -13,10 +13,14 @@ function toggleTheme(event) {
     localStorage.setItem(KEY_STORAGE_THEME, 'Dark');
 
     mainEl.classList.toggle('dark-theme');
+    footerEl.classList.toggle('dark-theme');
+    paginationEl.classList.toggle('dark-theme');
   } else {
     event.currentTarget.classList.toggle('sun');
     event.currentTarget.classList.toggle('moon');
     mainEl.classList.toggle('dark-theme');
+    footerEl.classList.toggle('dark-theme');
+    paginationEl.classList.toggle('dark-theme');
     localStorage.removeItem(KEY_STORAGE_THEME);
   }
 }
@@ -25,6 +29,8 @@ function initialTheme() {
   if (localStorage.getItem(KEY_STORAGE_THEME)) {
     toggleThemeBtn.classList.add(`moon`);
     mainEl.classList.toggle('dark-theme');
+    footerEl.classList.toggle('dark-theme');
+    paginationEl.classList.toggle('dark-theme');
   } else {
     toggleThemeBtn.classList.add('sun');
     localStorage.removeItem(KEY_STORAGE_THEME);
